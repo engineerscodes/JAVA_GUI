@@ -8,12 +8,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.JEditorPane;
 
 /**
  * @author M.NAVEEN
@@ -29,6 +34,7 @@ public class covid implements ActionListener{
     private JLabel lblNewLabel;
     private 	JLabel lblPassword;
     private JButton btnNewButton_1;
+    private JButton btnCanel;
 	/**
 	 * Launch the application.
 	 */
@@ -72,7 +78,7 @@ public class covid implements ActionListener{
 		frame.getContentPane().add(passwordField);
 		
 		 btnNewButton = new JButton("Login");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\HP\\Desktop\\download_1_161x41.png"));
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\Swing\\src\\images\\download_1_161x41.png"));
 		btnNewButton.setBounds(199, 150, 96, 31);
 		 btnNewButton.addActionListener(this); 
 		frame.getContentPane().add(btnNewButton);
@@ -88,9 +94,20 @@ public class covid implements ActionListener{
 		frame.getContentPane().add(lblPassword);
 		
 		 btnNewButton_1 = new JButton("Reset");
-		btnNewButton_1.setBounds(96, 150, 96, 31);
+		 btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\Swing\\src\\images\\download_2_96x31.png"));
+		btnNewButton_1.setBounds(113, 150, 84, 31);
 		btnNewButton_1.addActionListener(this);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		btnCanel = new JButton("Cancel");
+		btnCanel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{ // frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE );
+				frame.dispose();
+			}
+		});
+		btnCanel.setBounds(155, 204, 97, 25);
+		frame.getContentPane().add(btnCanel);
 	}
 
 	/* (non-Javadoc)
@@ -108,7 +125,10 @@ public class covid implements ActionListener{
             lblNewLabel.setVisible(false);
             lblPassword.setVisible(false);
             lblPassword.setVisible(false);
-            JOptionPane.showMessageDialog(lblNewLabel, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
+            btnCanel.setVisible(false);
+            btnNewButton_1.setVisible(false);
+            JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
+            
 			}
 			 else
 			 {
@@ -120,11 +140,16 @@ public class covid implements ActionListener{
 					 }
 					 else
 					 { passwordField.requestFocus();
-					 txtUsername.requestFocus();
 					 //JOptionPane.showMessageDialog(txtUsername, "PASSWORD LENGTH MUST BE GRATER THE 5");
-					 JOptionPane.showMessageDialog(txtUsername, "PASSWORD LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE);
+					 JOptionPane.showMessageDialog(passwordField, "PASSWORD LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE);
 					 }
 			 }
 		  }	
+		  else
+		  {
+			  txtUsername.setText("");
+			  passwordField.setText("");
+		  }
+		  
 	}
 }
