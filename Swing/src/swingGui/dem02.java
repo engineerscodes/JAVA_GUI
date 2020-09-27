@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package swingGui;
+import javax.swing.*;
+import java.awt.Dimension;
+public class dem02 
+{
+    JFrame f;
+   
+	public dem02() 
+	{
+        f=new JFrame();
+        f.setTitle("RANDOM CODER'S");
+        
+        JLabel  L=new JLabel("Nothing");
+       // L.setBounds(250, 250, 50, 50);
+         Dimension size = L.getPreferredSize();
+         L.setBounds(150, 100, size.width, size.height);
+         L.setLayout(null);
+        f.add(L);
+        f.setSize(500,500);
+        L.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+        f.setVisible(true);
+      
+	}
+
+	public static void main(String[] args) 
+	{
+		new dem02() ;
+	}
+
+}
