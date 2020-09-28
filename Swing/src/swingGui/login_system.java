@@ -2,6 +2,7 @@
  * 
  */
 package swingGui;
+import java.sql.*; 
 import java.awt.event.*;
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;
@@ -19,13 +20,14 @@ import java.awt.Font;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.JEditorPane;
+//import com.mysql.*;
 
 /**
  * @author M.NAVEEN
    RANDOM CODER'S
  *
  */
-public class covid implements ActionListener{
+public class login_system implements ActionListener{
 
 	private JFrame frame;
 	private JTextField txtUsername;
@@ -42,7 +44,7 @@ public class covid implements ActionListener{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					covid window = new covid();
+					login_system window = new login_system();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,7 +56,7 @@ public class covid implements ActionListener{
 	/**
 	 * Create the application.
 	 */
-	public covid() {
+	public login_system() {
 		initialize();
 	}
 
@@ -94,8 +96,8 @@ public class covid implements ActionListener{
 		frame.getContentPane().add(lblPassword);
 		
 		 btnNewButton_1 = new JButton("Reset");
-		 btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\Swing\\src\\images\\download_2_96x31.png"));
-		btnNewButton_1.setBounds(113, 150, 84, 31);
+		 btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\Swing\\src\\images\\RESETlogo_84x31.jpg"));
+		btnNewButton_1.setBounds(122, 150, 74, 31);
 		btnNewButton_1.addActionListener(this);
 		frame.getContentPane().add(btnNewButton_1);
 		
@@ -117,34 +119,60 @@ public class covid implements ActionListener{
 	public void actionPerformed(ActionEvent e) 
 	{ 
 		  if(e.getActionCommand().equalsIgnoreCase("Login"))
-		  { 
-			 if(txtUsername.getText().length()>=5&&passwordField.getText().length()>=5) 
-			{btnNewButton.setVisible(false);  
-            txtUsername.setVisible(false);
-            passwordField.setVisible(false);
-            lblNewLabel.setVisible(false);
-            lblPassword.setVisible(false);
-            lblPassword.setVisible(false);
-            btnCanel.setVisible(false);
-            btnNewButton_1.setVisible(false);
-            JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
-            
-			}
-			 else
-			 {
-				 
-					 if(txtUsername.getText().length()<5)
-					 { txtUsername.requestFocus();
-					 //JOptionPane.showMessageDialog(txtUsername, "UERSNAME LENGTH MUST BE GRATER THE 5");
-					 JOptionPane.showMessageDialog(txtUsername, "USERNAME LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE); 
-					 }
-					 else
-					 { passwordField.requestFocus();
-					 //JOptionPane.showMessageDialog(txtUsername, "PASSWORD LENGTH MUST BE GRATER THE 5");
-					 JOptionPane.showMessageDialog(passwordField, "PASSWORD LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE);
-					 }
-			 }
-		  }	
+		  {  try{
+			  Class.forName("com.mysql.jdbc.Driver");
+			  Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/logincovid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","141225514Left");
+			  System.out.print("done");
+			  String str1 = txtUsername.getText();
+
+		        char[] p = passwordField.getPassword();
+		        String str2 = new String(p);
+			  PreparedStatement ps = con.prepareStatement("select *FROM LOG  where login=? and  password=?");
+			    ps.setString(1, str1);
+
+	            ps.setString(2, str2);
+                ResultSet rs = ps.executeQuery();
+	            if(rs.next())
+	            {
+	            	JOptionPane.showMessageDialog(passwordField, "Login Successful ",rs.getString(1),JOptionPane.INFORMATION_MESSAGE);
+	            	if(txtUsername.getText().length()>=5&&passwordField.getText().length()>=5) 
+	    			{btnNewButton.setVisible(false);  
+	                txtUsername.setVisible(false);
+	                passwordField.setVisible(false);
+	                lblNewLabel.setVisible(false);
+	                lblPassword.setVisible(false);
+	                lblPassword.setVisible(false);
+	                btnCanel.setVisible(false);
+	                btnNewButton_1.setVisible(false);
+	               // JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
+	                
+	    			}
+	            }
+	            	 else
+	    			 {
+	    				 
+	    					 if(txtUsername.getText().length()<5)
+	    					 { txtUsername.requestFocus();
+	    					 //JOptionPane.showMessageDialog(txtUsername, "UERSNAME LENGTH MUST BE GRATER THE 5");
+	    					 JOptionPane.showMessageDialog(txtUsername, "USERNAME LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE); 
+	    					 }
+	    					 else if(passwordField.getText().length()<5)
+	    					 { passwordField.requestFocus();
+	    					 //JOptionPane.showMessageDialog(txtUsername, "PASSWORD LENGTH MUST BE GRATER THE 5");
+	    					 JOptionPane.showMessageDialog(passwordField, "PASSWORD LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE);
+	    					 }
+	    					 else
+	    					 {
+	    						 JOptionPane.showMessageDialog(passwordField, "Invalid username or password",  "ERROR", JOptionPane.ERROR_MESSAGE); 
+	    					 }
+	    			 }
+	    		  }	
+		  catch(Exception sq)
+		  {
+			  sq.printStackTrace();
+		  }
+		  }
+			
 		  else
 		  {
 			  txtUsername.setText("");
