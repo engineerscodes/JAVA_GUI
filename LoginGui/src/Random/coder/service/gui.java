@@ -19,6 +19,13 @@ import java.util.*;
 import Random.coder.dao.dbOperations;
 import Random.coder.util.database;
 import Random.coder.bean.*;
+import java.awt.Panel;
+import java.awt.CardLayout;
+import javax.swing.JTextPane;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Label;
+import javax.swing.JLayeredPane;
 /**
  * @author M.NAVEEN
    RANDOM CODER'S
@@ -141,6 +148,23 @@ public class gui  {
 		 btnNewButton_2 = new JButton("Cancel");
 		btnNewButton_2.setBounds(244, 184, 97, 25);
 		frame.getContentPane().add(btnNewButton_2);
+		
+		Panel panel = new Panel();
+		panel.setForeground(Color.CYAN);
+		panel.setBounds(28, 245, 400, 152);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new CardLayout(0, 0));
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBackground(Color.DARK_GRAY);
+		layeredPane.setForeground(Color.DARK_GRAY);
+		panel.add(layeredPane, "name_191589177895300");
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setLabelFor(lblNewLabel_2);
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\HP\\Desktop\\blog-wp-login_2_400x152.png"));
+		lblNewLabel_2.setBounds(0, 0, 400, 152);
+		layeredPane.add(lblNewLabel_2);
 		btnNewButton_2.addActionListener(new ActionListener(){
 
 			@Override
@@ -151,10 +175,4 @@ public class gui  {
 			
 		});
 	}
-
-	/* (non-Javadoc)
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
-
-
 }

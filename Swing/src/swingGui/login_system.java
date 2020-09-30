@@ -143,7 +143,7 @@ public class login_system implements ActionListener{
 	            {
 	            	JOptionPane.showMessageDialog(passwordField, "Login Successful ",rs.getString(1),JOptionPane.INFORMATION_MESSAGE);
 	            	if(txtUsername.getText().length()>=5&&passwordField.getText().length()>=5) 
-	    			{btnNewButton.setVisible(false);  
+	    			{ /*btnNewButton.setVisible(false);  
 	                txtUsername.setVisible(false);
 	                passwordField.setVisible(false);
 	                lblNewLabel.setVisible(false);
@@ -152,6 +152,9 @@ public class login_system implements ActionListener{
 	                btnCanel.setVisible(false);
 	                btnNewButton_1.setVisible(false);
 	                label.setVisible(false);
+	                */
+	            	secondframe sf=new secondframe();
+	            	sf.setVisible(true);
 	               // JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
 	                
 	    			}
