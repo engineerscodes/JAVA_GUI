@@ -20,6 +20,7 @@ import java.awt.Font;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.JEditorPane;
+import javax.swing.SwingConstants;
 //import com.mysql.*;
 
 /**
@@ -37,6 +38,7 @@ public class login_system implements ActionListener{
     private 	JLabel lblPassword;
     private JButton btnNewButton_1;
     private JButton btnCanel;
+    private JLabel label ;
 	/**
 	 * Launch the application.
 	 */
@@ -110,6 +112,11 @@ public class login_system implements ActionListener{
 		});
 		btnCanel.setBounds(155, 204, 97, 25);
 		frame.getContentPane().add(btnCanel);
+		
+		 label = new JLabel("");
+		label.setBounds(136, 121, 116, 16);
+		frame.getContentPane().add(label);
+		label.setVisible(false);
 	}
 
 	/* (non-Javadoc)
@@ -144,6 +151,7 @@ public class login_system implements ActionListener{
 	                lblPassword.setVisible(false);
 	                btnCanel.setVisible(false);
 	                btnNewButton_1.setVisible(false);
+	                label.setVisible(false);
 	               // JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
 	                
 	    			}
@@ -155,11 +163,15 @@ public class login_system implements ActionListener{
 	    					 { txtUsername.requestFocus();
 	    					 //JOptionPane.showMessageDialog(txtUsername, "UERSNAME LENGTH MUST BE GRATER THE 5");
 	    					 JOptionPane.showMessageDialog(txtUsername, "USERNAME LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE); 
+	    					 label.setText("Invalid UserName");
+	    					 label.setVisible(true);
 	    					 }
 	    					 else if(passwordField.getText().length()<5)
 	    					 { passwordField.requestFocus();
 	    					 //JOptionPane.showMessageDialog(txtUsername, "PASSWORD LENGTH MUST BE GRATER THE 5");
 	    					 JOptionPane.showMessageDialog(passwordField, "PASSWORD LENGTH MUST BE GRATER THE 4",  "ERROR", JOptionPane.ERROR_MESSAGE);
+	    					 label.setText("Invalid Password");
+	    					 label.setVisible(true);
 	    					 }
 	    					 else
 	    					 {
@@ -177,6 +189,7 @@ public class login_system implements ActionListener{
 		  {
 			  txtUsername.setText("");
 			  passwordField.setText("");
+			  label.setText(null);
 		  }
 		  
 	}
