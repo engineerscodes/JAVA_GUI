@@ -175,7 +175,7 @@ public class login_system implements ActionListener{
 	    					 }
 	    					 else
 	    					 {
-	    						 JOptionPane.showMessageDialog(passwordField, "Invalid username or password",  "ERROR", JOptionPane.ERROR_MESSAGE); 
+	    						 JOptionPane.showMessageDialog(passwordField, "Invalid Username or Password",  "ERROR", JOptionPane.ERROR_MESSAGE); 
 	    					 }
 	    			 }
 	    		  }	
