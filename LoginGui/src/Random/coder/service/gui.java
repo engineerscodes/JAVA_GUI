@@ -162,7 +162,7 @@ public class gui  {
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setLabelFor(lblNewLabel_2);
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\HP\\Desktop\\blog-wp-login_2_400x152.png"));
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\LoginGui\\src\\Random\\coder\\service\\blog-wp-login_2_400x152.png"));
 		lblNewLabel_2.setBounds(0, 0, 400, 152);
 		layeredPane.add(lblNewLabel_2);
 		btnNewButton_2.addActionListener(new ActionListener(){
