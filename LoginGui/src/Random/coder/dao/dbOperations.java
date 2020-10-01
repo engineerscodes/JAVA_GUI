@@ -51,13 +51,30 @@ public class dbOperations
  */
 	return res;	
 	}
-	public void update()
+	public int update(String username,String password,String newuser,String newpass)
 	{
-		
+		int res=-1;
+		try {
+			st=con.createStatement();
+			String sql=String.format("update log  set login='%s' ,password='%s' Where login='%s' and password='%s'",newuser,newpass,username,password);
+			res=st.executeUpdate(sql);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return res;
 	}
-	public void delete()
-	{
-		
+	public int delete(String username,String password)
+	{  int res=-1;
+		try {
+			st=con.createStatement();
+			String sql=String.format("Delete from log where login='%s' and password='%s'",username,password);
+			res=st.executeUpdate(sql);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return res;
 	}
 	public ArrayList <userDB_bean> retrive()
 	{   ArrayList <userDB_bean>  list=new ArrayList();
