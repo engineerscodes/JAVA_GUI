@@ -31,9 +31,25 @@ public class dbOperations
 	{
 		//not needed
 	}
-	public void InsertedValue()
-	{
-		
+	public int InsertedValue(String Username,String Pass)
+	{    int res=-1;
+		try {
+			st=con.createStatement();
+			String str=String.format("INSERT INTO LOG(login,password) VALUES('%s','%s')",Username,Pass);
+			//String command="INSERT INTO TABLE_NAME VALUES ;
+		res=st.executeUpdate(str);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+/*
+ * When the method execute returns true, 
+ * the method getResultSet is called to retrieve the ResultSet object. 
+ * When execute returns false, the method getUpdateCount returns an int. 
+ * If this number is greater than or equal to zero, it indicates the update count returned by the statement. 
+ * If it is -1, it indicates that there are no more results.
+ */
+	return res;	
 	}
 	public void update()
 	{

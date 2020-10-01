@@ -133,20 +133,23 @@ public class gui  {
 				  
 			  }
 			  else{
-			  btnNewButton_1.setVisible(false);
+			 /* btnNewButton_1.setVisible(false);
 			  btnNewButton.setVisible(false);
 			  btnNewButton_2.setVisible(false);
 			  textField.setVisible(false);;
 				 passwordField.setVisible(false);
 				 lblNewLabel.setVisible(false);
-				 lblNewLabel_1.setVisible(false); 
+				 lblNewLabel_1.setVisible(false); */
+				  Secondframe sf=new Secondframe();
+				  frame.dispose();
+				  sf.setVisible(true);
 			  }
 				 
 		  }
 		});
 		
 		 btnNewButton_2 = new JButton("Cancel");
-		btnNewButton_2.setBounds(244, 184, 97, 25);
+		btnNewButton_2.setBounds(137, 222, 97, 25);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		Panel panel = new Panel();
@@ -163,8 +166,32 @@ public class gui  {
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setLabelFor(lblNewLabel_2);
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\HP\\git\\JAVA_GUI\\LoginGui\\src\\Random\\coder\\service\\blog-wp-login_2_400x152.png"));
-		lblNewLabel_2.setBounds(0, 0, 400, 152);
+		lblNewLabel_2.setBounds(0, 13, 400, 139);
 		layeredPane.add(lblNewLabel_2);
+		
+		JButton btnNewButton_3 = new JButton("Sign Up");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{  
+			 if(passwordField.getText().length()<8)
+			{
+				JOptionPane.showMessageDialog(passwordField,"Password must be Atleast 8 Letter's");
+			}
+			else{
+				dbOperations db=new dbOperations();
+				int up=db.InsertedValue(textField.getText(),passwordField.getText());
+				if(up>=0)
+				{
+					JOptionPane.showMessageDialog(passwordField,"Signed UP");
+					Secondframe sf=new Secondframe();
+					frame.dispose();
+					sf.setVisible(true);
+				}
+			}
+			}
+		});
+		btnNewButton_3.setBounds(243, 184, 97, 25);
+		frame.getContentPane().add(btnNewButton_3);
 		btnNewButton_2.addActionListener(new ActionListener(){
 
 			@Override
