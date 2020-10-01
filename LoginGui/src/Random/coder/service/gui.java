@@ -33,13 +33,26 @@ import javax.swing.JLayeredPane;
  */
 public class gui  {
 
-	private JFrame frame;
-	private JTextField textField;
-	private JPasswordField passwordField;
+	public JFrame frame;
+	public JTextField textField;
+	public JPasswordField passwordField;
 	JButton btnNewButton_2;
+	static JTextField user;
+	static JPasswordField pass; 
 	/**
 	 * Launch the application.
 	 */
+	
+	public JTextField user()
+	{
+		user=textField;
+		return user;
+	}
+	public JTextField pass()
+	{
+		pass=passwordField;
+		return pass;
+	}
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -65,7 +78,7 @@ public class gui  {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 456, 454);
+		frame.setBounds(100, 100, 457, 457);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -120,6 +133,8 @@ public class gui  {
 				  {
 					  if(obj.getPassword().equals(passwordField.getText()))
 					  {  String info=String.format(" logged in as %s",obj.getUsername());
+					      user();
+					      pass();
 						  JOptionPane.showMessageDialog(textField,info);
 						  x=1;
 						  break;
@@ -202,4 +217,5 @@ public class gui  {
 			
 		});
 	}
+	
 }
