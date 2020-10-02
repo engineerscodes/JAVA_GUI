@@ -88,11 +88,16 @@ public class Secondframe extends JFrame {
 		
 		JButton btnNewButton_2 = new JButton("Deactivate");
 		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
+			public void actionPerformed(ActionEvent e) 
 			{
 				dbOperations db=new dbOperations();
                 System.out.println(new gui().user.getText());
                 db.delete(new gui().user.getText(),new gui().pass.getText());
+                JComponent jc=(JComponent) e.getSource();
+				Window win=SwingUtilities.getWindowAncestor(jc);
+				win.dispose();
+				gui g=new gui();
+				g.frame.setVisible(true);
                 
 			}
 		});
