@@ -87,7 +87,7 @@ public class resetFrame extends JFrame {
 				Window win=SwingUtilities.getWindowAncestor(c);
 				win.dispose();
 				new gui().frame.setVisible(true);
-				//System.out.print(textField.getText());
+				
 			}
 		});
 		btnNewButton.setBounds(162, 169, 97, 25);
