@@ -39,6 +39,7 @@ public class gui  {
 	JButton btnNewButton_2;
 	static JTextField user;
 	static JPasswordField pass; 
+	ImageIcon image;
 	/**
 	 * Launch the application.
 	 */
@@ -179,8 +180,11 @@ public class gui  {
 		panel.add(layeredPane, "name_191589177895300");
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setLabelFor(lblNewLabel_2);
-		lblNewLabel_2.setIcon(new ImageIcon("Images\\blog-wp-login_2_400x152.png"));
+		lblNewLabel_2.setLabelFor(lblNewLabel_2); 
+		//lblNewLabel_2.setIcon(new ImageIcon("Images\\blog-wp-login_2_400x152.png")); this line does not load image in jar files
+	    //  image=new ImageIcon(getClass().getClassLoader().getResource("blog-wp-login_2_400x152.png"));
+	     // lblNewLabel_2.setIcon(image); or use single line
+		lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("blog-wp-login_2_400x152.png")));
 		lblNewLabel_2.setBounds(0, 13, 400, 139);
 		layeredPane.add(lblNewLabel_2);
 		
