@@ -82,7 +82,7 @@ public class resetFrame extends JFrame {
 			{
 				dbOperations db=new dbOperations();
 				db.update(new gui().user.getText(),new gui().pass.getText(),textField.getText(),passwordField.getText() );
-				JOptionPane.showMessageDialog(passwordField,"Rest Successful");
+				JOptionPane.showMessageDialog(passwordField,"Reset Successful");
 				JComponent c=(JComponent)e.getSource();
 				Window win=SwingUtilities.getWindowAncestor(c);
 				win.dispose();
