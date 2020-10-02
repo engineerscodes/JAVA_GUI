@@ -98,7 +98,7 @@ public class resetFrame extends JFrame {
 		contentPane.add(passwordField);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\HP\\Desktop\\download_1_420x67.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("Images\\download_1_420x67.jpg"));
 		lblNewLabel_2.setBounds(0, 0, 420, 67);
 		contentPane.add(lblNewLabel_2);
 	}
