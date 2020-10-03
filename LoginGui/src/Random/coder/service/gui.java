@@ -107,6 +107,7 @@ public class gui  {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Reset");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton.setIcon(null);
 		btnNewButton.setBounds(40, 184, 87, 25);
 		frame.getContentPane().add(btnNewButton);
@@ -120,6 +121,7 @@ public class gui  {
 	
 		
 		JButton btnNewButton_1 = new JButton("Login");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_1.setBounds(137, 184, 97, 25);
 		frame.getContentPane().add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener(){
@@ -171,6 +173,7 @@ public class gui  {
 		});
 		
 		 btnNewButton_2 = new JButton("Cancel");
+		 btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_2.setBounds(137, 222, 97, 25);
 		frame.getContentPane().add(btnNewButton_2);
 		
@@ -196,6 +199,7 @@ public class gui  {
 		layeredPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton_3 = new JButton("Sign Up");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{  
