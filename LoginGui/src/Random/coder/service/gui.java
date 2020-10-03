@@ -26,6 +26,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Label;
 import javax.swing.JLayeredPane;
+import java.awt.Font;
 /**
  * @author M.NAVEEN
    RANDOM CODER'S
@@ -79,6 +80,7 @@ public class gui  {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(112, 128, 144));
 		frame.setBounds(100, 100, 457, 457);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -93,10 +95,14 @@ public class gui  {
 		frame.getContentPane().add(passwordField);
 		
 		JLabel lblNewLabel = new JLabel("UserName");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel.setForeground(new Color(0, 255, 255));
 		lblNewLabel.setBounds(28, 74, 99, 19);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1.setForeground(new Color(0, 255, 255));
 		lblNewLabel_1.setBounds(28, 125, 84, 22);
 		frame.getContentPane().add(lblNewLabel_1);
 		
@@ -180,6 +186,7 @@ public class gui  {
 		panel.add(layeredPane, "name_191589177895300");
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBackground(new Color(95, 158, 160));
 		lblNewLabel_2.setLabelFor(lblNewLabel_2); 
 		//lblNewLabel_2.setIcon(new ImageIcon("Images\\blog-wp-login_2_400x152.png")); this line does not load image in jar files
 	    //  image=new ImageIcon(getClass().getClassLoader().getResource("blog-wp-login_2_400x152.png"));
