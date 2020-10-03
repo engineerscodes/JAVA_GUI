@@ -25,6 +25,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Font;
 /**
  * @author M.NAVEEN
    RANDOM CODER'S
@@ -59,15 +61,22 @@ public class resetFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 432, 300);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(240, 255, 240));
+		contentPane.setBackground(new Color(112, 128, 144));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("New Username");
+		lblNewLabel.setForeground(new Color(0, 255, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel.setBackground(new Color(0, 255, 255));
 		lblNewLabel.setBounds(12, 80, 98, 16);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("New Password");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_1.setForeground(new Color(0, 255, 255));
 		lblNewLabel_1.setBounds(12, 118, 98, 16);
 		contentPane.add(lblNewLabel_1);
 		
@@ -77,6 +86,7 @@ public class resetFrame extends JFrame {
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("RESET");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{

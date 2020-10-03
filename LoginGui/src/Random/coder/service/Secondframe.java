@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComponent;
 
 import Random.coder.dao.dbOperations;
+import java.awt.Color;
+import java.awt.Font;
 
 
 /**
@@ -54,10 +56,12 @@ public class Secondframe extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 451);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(112, 128, 144));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Log Out");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.setBounds(294, 0, 138, 25);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -73,6 +77,7 @@ public class Secondframe extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Reset Password");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -87,6 +92,7 @@ public class Secondframe extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Deactivate");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -101,7 +107,7 @@ public class Secondframe extends JFrame {
                 
 			}
 		});
-		btnNewButton_2.setBounds(294, 71, 138, 25);
+		btnNewButton_2.setBounds(294, 65, 138, 25);
 		contentPane.add(btnNewButton_2);
 	}
 }
