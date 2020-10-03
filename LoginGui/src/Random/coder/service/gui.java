@@ -42,7 +42,7 @@ public class gui  {
 	static JPasswordField pass; 
 	ImageIcon image;
 	/**
-	 * Launch the application.
+	 * 
 	 */
 	
 	public JTextField user()
