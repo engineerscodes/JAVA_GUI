@@ -4,7 +4,9 @@
 package swingGui;
 import java.sql.*; 
 import java.awt.event.*;
+import java.awt.Desktop;
 import java.awt.EventQueue;
+
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -12,13 +14,18 @@ import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
+
 import javax.swing.JEditorPane;
 import javax.swing.SwingConstants;
 //import com.mysql.*;
@@ -155,6 +162,13 @@ public class login_system implements ActionListener{
 	                */
 	            	secondframe sf=new secondframe();
 	            	sf.setVisible(true);
+	            	try {
+	            		  Desktop desktop = java.awt.Desktop.getDesktop();
+	            		  URI oURL = new URI("http://www.google.com");
+	            		  desktop.browse(oURL);
+	            		} catch (Exception f) {
+	            		  f.printStackTrace();
+	            		}
 	               // JOptionPane.showMessageDialog(passwordField, "Login Successful","logged in",JOptionPane.INFORMATION_MESSAGE);
 	                
 	    			}
