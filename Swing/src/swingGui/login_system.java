@@ -132,7 +132,7 @@ public class login_system implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{ 
-		  if(e.getActionCommand().equalsIgnoreCase("Login"))
+		  if(e.getActionCommand()=="Login")
 		  {  try{
 			  Class.forName("com.mysql.jdbc.Driver");
 			  Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/logincovid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","141225514Left");
