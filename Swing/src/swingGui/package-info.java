@@ -2,8 +2,8 @@
  * 
  */
 /**
- * @author M.NAVEEN
-   RANDOM CODER'S
- *
+ *  @author M.NAVEEN
+ *  RANDOM CODER'S
+ *  Tech/Project Lead Android Club
  */
 package swingGui;
