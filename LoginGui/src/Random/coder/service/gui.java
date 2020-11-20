@@ -4,6 +4,8 @@
 package Random.coder.service;
 import java.util.ArrayList;
 import java.awt.event.*;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -41,10 +43,7 @@ public class gui  {
 	static JTextField user;
 	static JPasswordField pass; 
 	ImageIcon image;
-	/**
-	 * 
-	 */
-	
+
 	public JTextField user()
 	{
 		user=textField;
@@ -78,7 +77,9 @@ public class gui  {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(112, 128, 144));
 		frame.setBounds(100, 100, 457, 457);
@@ -146,6 +147,7 @@ public class gui  {
 					      pass();
 						  JOptionPane.showMessageDialog(textField,info);
 						  x=1;
+						 
 						  break;
 					  }
 					  
@@ -164,7 +166,19 @@ public class gui  {
 				 passwordField.setVisible(false);
 				 lblNewLabel.setVisible(false);
 				 lblNewLabel_1.setVisible(false); */
+				 
 				  Secondframe sf=new Secondframe();
+				  try {
+						FileOutputStream f=new FileOutputStream("Output.ser");	
+						ObjectOutputStream o=new ObjectOutputStream(f);
+						o.writeObject(frame);
+						o.writeObject(sf);
+						o.flush();
+						o.close();
+					}
+					catch(Exception e2) {
+						e2.printStackTrace();
+					}
 				  frame.dispose();
 				  sf.setVisible(true);
 			  }

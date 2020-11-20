@@ -20,9 +20,9 @@ public class database
     {  Connection con=null;
         try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url="jdbc:mysql://192.168.15.219:3306/logincovid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+			String url="jdbc:mysql://localhost:3306/logincovid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 			try {
-				con=DriverManager.getConnection(url,"newnav","141225514");
+				con=DriverManager.getConnection(url,"root","141225514Left");
 				if(con!=null)
 				{	System.out.println("connected");
 				
