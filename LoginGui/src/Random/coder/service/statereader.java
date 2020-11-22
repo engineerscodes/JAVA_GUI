@@ -24,7 +24,7 @@ public class statereader
 		   Secondframe sf=(Secondframe)obj.readObject();
 		   frame.setTitle("Serialzed Jframe");
 		   frame.show();
-		   sf.show();
+		   
 		   obj.close();
 		}
 		catch(Exception e)
