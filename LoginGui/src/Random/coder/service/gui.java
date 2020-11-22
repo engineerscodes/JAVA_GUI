@@ -245,6 +245,18 @@ public class gui  {
 			}
 			
 		});
+		
+		try {
+			FileOutputStream f=new FileOutputStream("Output.ser");	
+			ObjectOutputStream o=new ObjectOutputStream(f);
+			o.writeObject(frame);
+			//o.writeObject();
+			o.flush();
+			o.close();
+		}
+		catch(Exception e2) {
+			e2.printStackTrace();
+		}
 	}
 	
 }

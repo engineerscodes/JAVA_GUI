@@ -32,7 +32,7 @@ import java.awt.Font;
 public class Secondframe extends JFrame {
 
 	private JPanel contentPane;
-
+    static Secondframe frame ;
 	/**
 	 * Launch the application.
 	 */
@@ -40,7 +40,7 @@ public class Secondframe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Secondframe frame = new Secondframe();
+					frame= new Secondframe();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class Secondframe extends JFrame {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the frame.
 	 */
